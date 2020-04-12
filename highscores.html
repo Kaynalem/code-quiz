@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>High Scores</title>
+    <link rel="stylesheet" href ="./assets/css/main.css">
+</head>
+<body>
+    <div class="wrapper"><!--class=-"container"-->
+        <div id="highscores"><!--class=-"flex-center flex-column"-->
+            <h1 id="finalScore">High Scores</h1>
+            <ol id="highScoresList"></ol>
+            <div class="navigation">
+                <button id="home" class="home btn" onclick="window.location.href ='index.html';">Go back</button>
+                <button onclick="clearAll()" class="clear btn">Clear high scores</button>
+            </div>  
+        </div>
+    </div>
+    <script src="./assets/js/highscores.js"></script>
+</body>
+</html>

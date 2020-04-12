@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href ="./assets/css/main.css">
+</head>
+<body>
+    <header>
+        <h2>
+            <a href="./highscores.html">View high scores</a>
+        </h2>
+        <h2>Time: <span id="countdown">75</span><span id="countdown-0" class="hide">0</span></h2>
+    </header>
+    <main class="quiz">
+        <div class="wrapper">
+            <div id="start" class="welcome">
+                <h1>Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                <button id="start-btn" class="start-btn btn">Start Quiz</button>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div id="question-container" class="hide">
+                <div id="question" class="question">Question</div>
+                <div class="wrapper">
+                    <div id="answer-buttons"class="btn-grid">
+                        <button id="answer" class="btn">Answer 1</button>
+                        <button id="answer" class="btn">Answer 2</button>
+                        <button id="answer" class="btn">Answer 3</button>
+                        <button id="answer" class="btn">Answer 4</button>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div id="score" class="hide">
+                        <h1>All done!</h1>
+                        <p>Your final score is <span id="total-score">Total Score</span>.</p>
+                        <div class="score-entry">
+                            <p>Enter initials: 
+                            <form id="initials-entered">
+                                <input id="initials" type="text" placeholder="Your Initials">
+                            </form>
+                            <button id="submit-btn" class="submit-btn btn" type="submit">Submit</button>
+                            </p>
+                        </div>  
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h2 id="wrong" class="hide">Wrong!</h2>
+        <h2 id="correct" class="hide">Correct!</h2>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

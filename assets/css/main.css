@@ -1,0 +1,138 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --neutral-color: rgb(255, 255, 255);
+    --correct-color: rgb(159, 223, 159);
+    --wrong-color: rgb(204, 102, 102);
+    --primary-color: rgb(54, 14, 107);
+    --secondary-color:  rgb(202, 45, 233);
+}
+body {
+    margin: 0 auto;
+    /*padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;*/
+    background-color: var(--neutral-color);
+}
+/*body.correct {
+    background-color: var(--correct-color);
+}
+body.wrong {
+    background-color: var(--wrong-color);
+}
+header {
+    padding: 20px 35px;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0px;
+}
+header h2 {
+    margin: 0;
+}*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    top: 0px
+}
+header a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}/*
+header nav {
+    margin: 7px 0;
+}
+
+main {
+    margin: 50px;
+}
+.quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    max-width: 80%;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    max-width: 80%;
+}*/
+.welcome {
+    text-align: center;
+}
+.welcome p {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+.question {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+.wrapper {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+    width: 20%;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--neutral-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.hide {
+    display: none;
+}
+.score-entry {
+    display: flex;
+    align-items: center;
+
+}
+input {
+    margin: 10px;
+}
+/* Style HighScores page*/
+.high-score {
+
+margin-bottom: 0.5rem;
+
+}
+#highScoresList {
+    background-color: rgba(54, 14, 107, 0.2);;
+}
+footer {
+    margin: 0 auto;
+    border-top: 1px;
+    display: flex;
+    justify-content: center;
+}
+footer.h2 {
+    margin:0;
+}
