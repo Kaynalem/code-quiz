@@ -1,10 +1,8 @@
-
 var startButton = document.getElementById('start-btn');
 var mainPage = 'start';
 var questionContainerEl = document.getElementById('question-container');
 var questionEl = document.getElementById('question');
 var answerEl = document.getElementById('answer-buttons');
-var answerClicked = document.getElementById('answer');
 var scorePage = document.getElementById('score');
 var displayScoreVal = document.getElementById('total-score');
 var totalScore = 0;
@@ -32,8 +30,8 @@ function startGame() {
 
 }, 1000);
 
-    startButton.classList.add('hide'); //hides start button once clicked
-    document.getElementById(mainPage).style.visibility = "hidden"; //hides mainPage text once start is clicked
+startButton.classList.add('hide'); //hides start button once clicked
+    document.getElementById(mainPage).style.display = "none"; //hides main Page text once start is clicked
     currentQuestionIndex = 0;
     questionContainerEl.classList.remove('hide');
     setNextQuestion();
@@ -70,7 +68,6 @@ submitScore.addEventListener('click', function(e) {
         score: mostRecentScore,
         initials: initials.value
     };
-    //debugger;
     if (initials.value === "") {
         window.alert("Initials cannot be blank");
     } else {
@@ -85,11 +82,9 @@ submitScore.addEventListener('click', function(e) {
 });
 
 initialsEntered.reset();
-
 }
     
 function showQuestion(question) {
-    //debugger;
     if (currentQuestionIndex < questions.length) {
     questionEl.innerText = question.question;
     Array.from(question.answers).forEach(answer => {
@@ -101,25 +96,33 @@ function showQuestion(question) {
         }
         button.addEventListener('click', selectAnswer);
         answerEl.appendChild(button);
+        // replace previous question/answer set as long as there are more questions to ask
+        button.addEventListener('click', function() {
+            if (currentQuestionIndex < questions.length) {
+                currentQuestionIndex++;
+                setNextQuestion();
+            }
+        });
     });
     } else {
         displayScore();
     }
 }
-
+//clears created buttons
 function resetState() {
 
     while (answerEl.firstChild) {
         answerEl.removeChild(answerEl.firstChild);
     }
 }
+//add 10 points if correct answer selected, remove 5 points and 15 seconds if wrong answer selected, displays "Correct!" or "Wrong!" based on selection
 function selectAnswer(e) {
-
-    var selectedBotton = e.target;
-    var correct = selectedBotton.dataset.correct;
+    var selectedButton = e.target;
+    var correct = selectedButton.dataset.correct;
 
     if (correct) {
         totalScore += 10;
+        console.log("total score "+ totalScore);
         correctAnswer.classList.remove('hide');
         wrongAnswer.classList.add('hide');
     } else {
@@ -137,20 +140,8 @@ function selectAnswer(e) {
         }
     }
 }
-// replace previous question/answer set as long as there are more questions to ask
+
 startButton.addEventListener('click', startGame);
-/*function nextQuestion() {
-    if (currentQuestionIndex < questions.length) {
-        currentQuestionIndex++;
-        setNextQuestion();
-    }
-}*/
-answerEl.addEventListener('click', function() {
-    if (currentQuestionIndex < questions.length) {
-        currentQuestionIndex++;
-        setNextQuestion();
-    }
-}); 
 
 // The array of questions for our quiz game.
 var questions = [

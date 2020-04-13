@@ -10,5 +10,5 @@ highScoresList.innerHTML =
 
 function clearAll() {
     localStorage.clear();
-    document.getElementById('highScoresList').innerHTML = "";
+    document.getElementById('highScoresList').style.display = "none";
 }
