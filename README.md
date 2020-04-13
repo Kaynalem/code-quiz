@@ -7,4 +7,4 @@
 [Code Quiz Page](https://kaynalem.github.io/code-quiz/)
 
 ### Page Mock-up
-![](code-quiz-mockup.png)
+![](./code-quiz-mockup.PNG)
