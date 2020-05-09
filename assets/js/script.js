@@ -23,7 +23,7 @@ function startGame() {
         timeLeft--;
         timerEl.textContent = timeLeft;
         
-    if (timeLeft === 0) {
+    if (timeLeft <= 0) {
         displayScore();
         clearInterval(timeInterval);
     }
